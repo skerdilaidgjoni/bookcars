@@ -45,7 +45,7 @@ import { strings as signInStrings } from '@/lang/sign-in'
 import { strings as signUpStrings } from '@/lang/sign-up'
 import { strings as tosStrings } from '@/lang/tos'
 
-import 'github-fork-ribbon-css/gh-fork-ribbon.css'
+// import 'github-fork-ribbon-css/gh-fork-ribbon.css'
 
 import 'react-toastify/dist/ReactToastify.min.css'
 import '@/assets/css/common.css'
@@ -166,13 +166,14 @@ const isEL = language === 'el'
 
 const theme = createTheme(
   {
-    // palette: {
-    //   primary: {
-    //     main: '#1976D2',
-    //     contrastText: '#121212',
-    //     dark: '#1976D2',
-    //   },
-    // },
+    palette: {
+      primary: {
+        main: '#ffefd5',
+      },
+      secondary: {
+        main: '#ff4500'
+      },
+    },
     typography: {
       fontFamily: [
         '-apple-system',
@@ -247,31 +248,4 @@ const theme = createTheme(
   isFr ? frFR : isEL ? elGR : enUS,
   isFr ? dataGridfrFR : isEL ? dataGridelGR : dataGridenUS,
   isFr ? corefrFR : isEL ? coreelGR : coreenUS,
-)
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <ThemeProvider theme={theme}>
-    <CssBaseline>
-      <App />
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        pauseOnFocusLoss={false}
-        draggable={false}
-        pauseOnHover
-        theme="dark"
-      />
-      <a
-        className="github-fork-ribbon fixed left-bottom"
-        href="https://github.com/aelassas/bookcars"
-        data-ribbon="Fork me on GitHub"
-        title="Fork me on GitHub"
-      >
-        Fork me on GitHub
-      </a>
-    </CssBaseline>
-  </ThemeProvider>,
 )
